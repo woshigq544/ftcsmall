@@ -63,10 +63,10 @@
         <table schema="" tableName="usermsg" domainObjectName="Users" enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
         </table>
-        <table schema="" tableName="doit" domainObjectName="Users" enableCountByExample="false" enableSelectByExample="false"
+        <table schema="" tableName="doit" domainObjectName="DoIt" enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
         </table>
-        <table schema="" tableName="likemsg" domainObjectName="Users" enableCountByExample="false" enableSelectByExample="false"
+        <table schema="" tableName="likemsg" domainObjectName="Likes" enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
         </table>
     </context>

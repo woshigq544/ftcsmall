@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.myftctest.ftcmapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.example.myftctest.ftcentity.Users">
+    <id column="likeid" jdbcType="INTEGER" property="likeid" />
+    <result column="ikename" jdbcType="VARCHAR" property="ikename" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    likeid, ikename
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from likemsg
+    where likeid = #{likeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from likemsg
+    where likeid = #{likeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into likemsg (likeid, ikename)
+    values (#{likeid,jdbcType=INTEGER}, #{ikename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into likemsg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="likeid != null">
+        likeid,
+      </if>
+      <if test="ikename != null">
+        ikename,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="likeid != null">
+        #{likeid,jdbcType=INTEGER},
+      </if>
+      <if test="ikename != null">
+        #{ikename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.myftctest.ftcentity.Users">
+    update likemsg
+    <set>
+      <if test="ikename != null">
+        ikename = #{ikename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where likeid = #{likeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.myftctest.ftcentity.Users">
+    update likemsg
+    set ikename = #{ikename,jdbcType=VARCHAR}
+    where likeid = #{likeid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.example.myftctest.ftcentity.Users">
+    <id column="doid" jdbcType="INTEGER" property="doid" />
+    <result column="dowhat" jdbcType="VARCHAR" property="dowhat" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    doid, dowhat
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from doit
+    where doid = #{doid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from doit
+    where doid = #{doid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into doit (doid, dowhat)
+    values (#{doid,jdbcType=INTEGER}, #{dowhat,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into doit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="doid != null">
+        doid,
+      </if>
+      <if test="dowhat != null">
+        dowhat,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="doid != null">
+        #{doid,jdbcType=INTEGER},
+      </if>
+      <if test="dowhat != null">
+        #{dowhat,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.myftctest.ftcentity.Users">
+    update doit
+    <set>
+      <if test="dowhat != null">
+        dowhat = #{dowhat,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where doid = #{doid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.myftctest.ftcentity.Users">
+    update doit
+    set dowhat = #{dowhat,jdbcType=VARCHAR}
+    where doid = #{doid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.example.myftctest.ftcentity.Users">
+    <id column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="sername" jdbcType="VARCHAR" property="sername" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="ikeid" jdbcType="INTEGER" property="ikeid" />
+    <result column="doid" jdbcType="INTEGER" property="doid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userid, sername, password, ikeid, doid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from usermsg
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from usermsg
+    where userid = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into usermsg (userid, sername, password, 
+      ikeid, doid)
+    values (#{userid,jdbcType=INTEGER}, #{sername,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{ikeid,jdbcType=INTEGER}, #{doid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into usermsg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="sername != null">
+        sername,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="ikeid != null">
+        ikeid,
+      </if>
+      <if test="doid != null">
+        doid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="sername != null">
+        #{sername,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="ikeid != null">
+        #{ikeid,jdbcType=INTEGER},
+      </if>
+      <if test="doid != null">
+        #{doid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.myftctest.ftcentity.Users">
+    update usermsg
+    <set>
+      <if test="sername != null">
+        sername = #{sername,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="ikeid != null">
+        ikeid = #{ikeid,jdbcType=INTEGER},
+      </if>
+      <if test="doid != null">
+        doid = #{doid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.myftctest.ftcentity.Users">
+    update usermsg
+    set sername = #{sername,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      ikeid = #{ikeid,jdbcType=INTEGER},
+      doid = #{doid,jdbcType=INTEGER}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.example.myftctest.ftcentity.Users">
+    <id column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userid, username, password, phone, email, createtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from usermsg
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from usermsg
+    where userid = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into usermsg (userid, username, password, 
+      phone, email, createtime
+      )
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.myftctest.ftcentity.Users">
+    insert into usermsg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.myftctest.ftcentity.Users">
+    update usermsg
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.myftctest.ftcentity.Users">
+    update usermsg
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>
